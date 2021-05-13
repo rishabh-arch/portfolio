@@ -60,6 +60,19 @@ body {
     left: 0px;
 
 }
+#nav_bottom{
+    top: -120px;
+    left: 33px;
+    width: 50%;
+height: 59%;
+z-index: 1;
+}
+#nav_bottom>#nav_bt_shape{
+    border-radius: 50%;
+    color: white;
+    border: 2px solid wheat;
+}
+
 
 .page {
     position: relative;
@@ -76,14 +89,15 @@ body {
 /* BUDDHA */
 
 #buddha_svg {
-
+    
     top: 96%;
     align-items: center;
     /* border: 2px solid white; */
     position: absolute;
     animation: buddha 2s infinite alternate;
     transform-origin: center;
-    z-index: 1;
+    z-index: 2;
+    transition: all 0.5s;
 }
 #buddha_moonlight_svg {
     z-index: 0;
@@ -101,9 +115,12 @@ body {
     }
     to {
         transform: translate(0%, 3%);
-
-
+        
+        
     }
+}
+#buddha_svg:hover {
+transform: scale(1.5)
 }
 
 /* TREE */
@@ -125,3 +142,30 @@ right: -50px;
 
     }
 }
+
+/* sky */
+
+#sky{
+    position: absolute;
+    top: 50px;
+    left: 26px;
+width: 100%;
+/* border: 2px solid white; */
+    /* animation: sky 3s infinite alternate; */
+    z-index: 0;
+    display: flex;
+}
+.cloud{
+    animation: cloud 3s infinite alternate;
+
+}
+@keyframes cloud {
+    from{
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+    to{
+        transform: rotateY(20deg) rotateX(10deg);
+
+    }
+}
+
