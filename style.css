@@ -53,10 +53,9 @@ body {
     overflow: hidden;
     /* border:2px solid white; */
     height: 40px;
-}
-#skill{
     cursor: pointer;
 }
+
 
 .link_bottom {
     transition: all 0.3s;
@@ -191,6 +190,7 @@ width: 100%;
     /* animation: sky 3s infinite alternate; */
     z-index: 0;
     display: flex;
+    justify-content: space-between;
 }
 .cloud{
     animation: cloud 3s infinite alternate;
