@@ -22,6 +22,7 @@
             unactive[i].classList.remove('link_bottom_active');
         }
         const active = document.getElementById(getid);
+        document.title = `Portfolio - ${getid}`;
     buddha_svg.classList.replace('buddha_svg_top_Active', 'buddha_svg_top_skill');
     active.classList.add('link_bottom_active');
 
