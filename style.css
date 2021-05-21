@@ -8,8 +8,14 @@
 body {
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: rgb(6, 3, 8);
+    background-image: linear-gradient(rgb(2, 3, 22), rgb(47, 35, 61));
+    background-repeat: no-repeat;
     scroll-behavior: smooth;
+    background-attachment: fixed;
+    background-position-x: center;
+
+    /* width: 100%; */
+    height: 100%;
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -48,7 +54,9 @@ body {
     /* border:2px solid white; */
     height: 40px;
 }
-
+#skill{
+    cursor: pointer;
+}
 
 .link_bottom {
     transition: all 0.3s;
@@ -56,17 +64,26 @@ body {
     bottom: 0;
     left: 110px;
 }
+.link_bottom_active {
+  color: brown;
+
+}
 .page-link:hover .link_bottom {
     left: 0px;
 
 }
 #nav_bottom{
+    width: 0%;
+    transition: all 0.5s;
     top: -120px;
     left: 33px;
-    width: 50%;
 height: 59%;
 z-index: 1;
+width: 50%;
 }
+    
+    /* #loaded{width: 50%;} */
+
 #nav_bottom>#nav_bt_shape{
     border-radius: 50%;
     color: white;
@@ -90,14 +107,25 @@ z-index: 1;
 
 #buddha_svg {
     
-    top: 96%;
     align-items: center;
     /* border: 2px solid white; */
     position: absolute;
     animation: buddha 2s infinite alternate;
     transform-origin: center;
     z-index: 2;
-    transition: all 0.5s;
+    transition: all 1.0s;
+}
+.buddha_svg_top{
+    top: 996%;
+}
+.buddha_svg_top_Active{
+    top: 96%;
+    left: 35%;
+
+}
+.buddha_svg_top_skill{
+    top: 96%;
+    left: 0%;
 }
 #buddha_moonlight_svg {
     z-index: 0;
@@ -107,6 +135,17 @@ z-index: 1;
     position: absolute;
     /* animation: buddha 2s infinite alternate; */
     transform-origin: center;
+    animation: buddha_moonlight_svg 70s infinite;
+    filter: drop-shadow(2px 4px 6px black);
+}
+@keyframes buddha_moonlight_svg{
+from{
+transform: rotate(0deg);
+}
+to{
+    transform: rotate(360deg);
+
+}
 }
 
 @keyframes buddha {
@@ -115,8 +154,6 @@ z-index: 1;
     }
     to {
         transform: translate(0%, 3%);
-        
-        
     }
 }
 #buddha_svg:hover {
@@ -169,3 +206,10 @@ width: 100%;
     }
 }
 
+/* building */
+#bulding{
+top: 245%;
+width: 33%;
+left: -20%;
+    position: absolute;
+}
