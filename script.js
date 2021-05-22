@@ -30,35 +30,56 @@ function skill(getid) {
     let skill_input = document.getElementById('skill_input');
     let contact_input = document.getElementById('contact_input');
     let projects_input = document.getElementById('projects_input');
-    let hojaa = document.getElementById('hojaa');
+    let profile_ul = document.getElementById('profile_ul');
+    let skill_ul = document.getElementById('skill_ul');
+    let contact_ul = document.getElementById('contact_ul');
+    let projects_ul = document.getElementById('projects_ul');
+
     if (getid === "profile") {
-        profile_input.checked = true;
+        profile_ul.classList.remove('hidden');
         
+        profile_input.checked = true;
         skill_input.checked = false;
         contact_input.checked = false;
         projects_input.checked = false;
-        hojaa.classList.add('hidden');
+        skill_ul.classList.add('hidden');
+        contact_ul.classList.add('hidden');
+        projects_ul.classList.add('hidden');
     }
     if (getid === "skill") {
+        skill_ul.classList.remove('hidden');
         skill_input.checked = true;
-        
+
         contact_input.checked = false;
         projects_input.checked = false;
         profile_input.checked = false;
+        profile_ul.classList.add('hidden');
+        contact_ul.classList.add('hidden');
+        projects_ul.classList.add('hidden');
     }
-    if (getid === "contact"){
+    if (getid === "contact") {
+        contact_ul.classList.remove('hidden');
+
         contact_input.checked = true;
-        
+
         projects_input.checked = false;
         profile_input.checked = false;
         skill_input.checked = false;
+        profile_ul.classList.add('hidden');
+        skill_ul.classList.add('hidden');
+        projects_ul.classList.add('hidden');
     }
-    if (getid === "projects"){
+    if (getid === "projects") {
+
+        projects_ul.classList.remove('hidden');
         projects_input.checked = true;
 
         contact_input.checked = false;
         skill_input.checked = false;
         profile_input.checked = false;
+        contact_ul.classList.add('hidden');
+        skill_ul.classList.add('hidden');
+        profile_ul.classList.add('hidden');
     }
 
 }
