@@ -24,7 +24,48 @@ function skill(getid) {
     }
     const active = document.getElementById(getid);
     document.title = `Portfolio - ${getid}`;
+    buddha_svg.classList.replace('buddha_svg_top_Active', 'buddha_svg_top_skill');
     active.classList.add('link_bottom_active');
+    let profile_input = document.getElementById('profile_input');
+    let skill_input = document.getElementById('skill_input');
+    let contact_input = document.getElementById('contact_input');
+    let projects_input = document.getElementById('projects_input');
+    let hojaa = document.getElementById('hojaa');
+    if (getid === "profile") {
+        profile_input.checked = true;
+        
+        skill_input.checked = false;
+        contact_input.checked = false;
+        projects_input.checked = false;
+        hojaa.classList.add('hidden');
+    }
+    if (getid === "skill") {
+        skill_input.checked = true;
+        
+        contact_input.checked = false;
+        projects_input.checked = false;
+        profile_input.checked = false;
+    }
+    if (getid === "contact"){
+        contact_input.checked = true;
+        
+        projects_input.checked = false;
+        profile_input.checked = false;
+        skill_input.checked = false;
+    }
+    if (getid === "projects"){
+        projects_input.checked = true;
+
+        contact_input.checked = false;
+        skill_input.checked = false;
+        profile_input.checked = false;
+    }
+
+}
+function skill2() {
+
+    let inputs = document.getElementById('features');
+    inputs.checked = false;
 
 }
 
@@ -39,40 +80,45 @@ if (typeof (Storage) !== "undefined") {
 }
 
 let changed = localStorage.getItem("mode");
-let changed2;
+let toggle_btn_change;
 
 if (changed === "true") {
-    changed2 = false;
+    toggle_btn_change = false;
     toggleBtn.classList.remove('toggle-btn-left');
     toggleBtn.classList.add('toggle-btn-right');
-    document.body.style.backgroundImage = 'linear-gradient(rgb(2, 3, 22), rgb(47, 35, 61))';
+    darkMode();
 }
 else if (changed === "false") {
-    changed2 = true;
+    toggle_btn_change = true;
     toggleBtn.classList.remove('toggle-btn-right');
     toggleBtn.classList.add('toggle-btn-left');
-    document.body.style.backgroundImage = 'linear-gradient(rgb(14, 173, 221), rgb(24, 240, 96))';
+    lightMode();
 
 }
 
 function modeChange() {
-    if (changed2) {
-        changed2 = false;
+    if (toggle_btn_change) {
+        toggle_btn_change = false;
         toggleBtn.classList.remove('toggle-btn-left');
         toggleBtn.classList.add('toggle-btn-right');
         localStorage.setItem("mode", true);
-        document.body.style.backgroundImage = 'linear-gradient(rgb(2, 3, 22), rgb(47, 35, 61))';
+        darkMode();
     }
-    else if (changed2 === false) {
-        changed2 = true;
-        document.body.style.backgroundImage = 'linear-gradient(rgb(14, 173, 221), rgb(24, 240, 96))';
+    else if (toggle_btn_change === false) {
+        toggle_btn_change = true;
         toggleBtn.classList.remove('toggle-btn-right');
         toggleBtn.classList.add('toggle-btn-left');
         localStorage.setItem("mode", false);
-
+        lightMode();
     }
 }
+function lightMode() {
+    document.body.style.backgroundImage = 'linear-gradient(rgb(0 196 255), rgb(30 155 168))';
+}
+function darkMode() {
+    document.body.style.backgroundImage = 'linear-gradient(rgb(2, 3, 22), rgb(47, 35, 61))';
 
+}
 
     // (function(elementSelector) {
     //     var dragStartX, dragStartY; var objInitLeft, objInitTop;

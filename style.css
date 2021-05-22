@@ -8,7 +8,8 @@
 body {
     overflow-y: scroll;
     overflow-x: hidden;
-    background-image: linear-gradient(rgb(2, 3, 22), rgb(47, 35, 61));
+    /* background-image: linear-gradient(rgb(2, 3, 22), rgb(47, 35, 61)); */
+    background-image:  linear-gradient(rgb(0 196 255), rgb(30 155 168)) ;
     background-repeat: no-repeat;
     scroll-behavior: smooth;
     background-attachment: fixed;
@@ -54,6 +55,7 @@ body {
     /* border:2px solid white; */
     height: 40px;
     cursor: pointer;
+    user-select: none;
 }
 
 
@@ -239,3 +241,6 @@ width: 33%;
 left: -20%;
     position: absolute;
 }
+
+/* contentStyling */
+
