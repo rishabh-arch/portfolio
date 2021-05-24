@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Reggae One', cursive;
 
 }
 body {
@@ -244,3 +245,18 @@ left: -20%;
 
 /* contentStyling */
 
+#mid_header{
+    /* border: 2px solid white; */
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+    bottom: -30%;
+    display: inline-block;
+    width: 100%;
+    /* margin-left: 38%;
+     */
+     /* align-self: center; */
+     text-align: center;
+
+    font-size: 5em;
+}
